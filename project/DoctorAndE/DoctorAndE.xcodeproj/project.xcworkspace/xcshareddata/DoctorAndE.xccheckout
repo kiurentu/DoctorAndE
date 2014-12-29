@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FF8382A8-26A4-42D1-B293-EA407A59D667</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DoctorAndE</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1BB4E2EE181B13529950B279B56CF7323416F11E</key>
+		<string>https://git.oschina.net/skytoup/DoctorAndE.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>project/DoctorAndE/DoctorAndE.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1BB4E2EE181B13529950B279B56CF7323416F11E</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://git.oschina.net/skytoup/DoctorAndE.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1BB4E2EE181B13529950B279B56CF7323416F11E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1BB4E2EE181B13529950B279B56CF7323416F11E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DoctorAndE</string>
+		</dict>
+	</array>
+</dict>
+</plist>

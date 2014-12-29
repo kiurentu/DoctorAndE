@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>model</key>
+	<array>
+		<dict>
+			<key>goodsImg</key>
+			<string>个人中心_normal.png</string>
+			<key>goodsName</key>
+			<string>LS805 血压管理服务套餐</string>
+			<key>price</key>
+			<string>999.0</string>
+			<key>now_number</key>
+			<string>5</string>
+		</dict>
+		<dict>
+			<key>goodsImg</key>
+			<string>个人中心_pressed.png</string>
+			<key>goodsName</key>
+			<string>LS805 血压管理服务套餐22</string>
+			<key>price</key>
+			<string>10000.0</string>
+			<key>now_number</key>
+			<string>6</string>
+		</dict>
+		<dict>
+			<key>goodsImg</key>
+			<string>个人中心_normal.png</string>
+			<key>goodsName</key>
+			<string>LS805 血压管理3333</string>
+			<key>price</key>
+			<string>147.5</string>
+			<key>now_number</key>
+			<string>78</string>
+		</dict>
+		<dict>
+			<key>goodsImg</key>
+			<string>个人中心_pressed.png</string>
+			<key>goodsName</key>
+			<string>LS805 血压管理44444</string>
+			<key>price</key>
+			<string>45645</string>
+			<key>now_number</key>
+			<string>78</string>
+		</dict>
+	</array>
+</dict>
+</plist>

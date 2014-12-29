@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4510" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreShoppingViewController">
+            <connections>
+                <outlet property="moreCollectionView" destination="lfi-XU-Eqm" id="dkl-AS-HwX"/>
+                <outlet property="moreTableView" destination="zrX-X8-cvH" id="DII-ej-W0x"/>
+                <outlet property="searchTextField" destination="UhF-Qs-d1G" id="NI4-Gx-twp"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zrX-X8-cvH">
+                    <rect key="frame" x="0.0" y="47" width="320" height="571"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="DLg-3R-ybg"/>
+                        <outlet property="delegate" destination="-1" id="fL0-os-Qsc"/>
+                    </connections>
+                </tableView>
+                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="lfi-XU-Eqm">
+                    <rect key="frame" x="0.0" y="51" width="318" height="567"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="grG-wd-RMg">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="ghI-wc-Zhb"/>
+                        <outlet property="delegate" destination="-1" id="lnx-Jg-cGE"/>
+                    </connections>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmM-jV-kzI">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="请输入关键字查找" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="UhF-Qs-d1G">
+                            <rect key="frame" x="37" y="10" width="165" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPu-Mz-onQ">
+                            <rect key="frame" x="219" y="10" width="46" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="查找">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="searchTheCommodityAndView" destination="-1" eventType="touchUpInside" id="J47-sl-v6h"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="0I5-Iy-UMk"/>
+                        <constraint firstAttribute="width" constant="320" id="QvD-Q8-tPt"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lfi-XU-Eqm" secondAttribute="trailing" constant="2" id="8rh-mr-1kw"/>
+                <constraint firstAttribute="trailing" secondItem="zrX-X8-cvH" secondAttribute="trailing" id="9ZA-Vh-Og9"/>
+                <constraint firstItem="KmM-jV-kzI" firstAttribute="top" secondItem="1" secondAttribute="top" id="C7w-Cy-ET3"/>
+                <constraint firstItem="lfi-XU-Eqm" firstAttribute="top" secondItem="1" secondAttribute="top" constant="51" id="Iaf-Wg-PBk"/>
+                <constraint firstAttribute="bottom" secondItem="lfi-XU-Eqm" secondAttribute="bottom" constant="-50" id="ROs-Wp-hHi"/>
+                <constraint firstItem="lfi-XU-Eqm" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="Vpv-mo-vRG"/>
+                <constraint firstAttribute="bottom" secondItem="zrX-X8-cvH" secondAttribute="bottom" constant="-50" id="e5T-MT-cSg"/>
+                <constraint firstItem="KmM-jV-kzI" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="grY-tG-Zux"/>
+                <constraint firstItem="zrX-X8-cvH" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="mbh-v7-sT0"/>
+                <constraint firstItem="zrX-X8-cvH" firstAttribute="top" secondItem="1" secondAttribute="top" constant="47" id="xMW-IW-jtx"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

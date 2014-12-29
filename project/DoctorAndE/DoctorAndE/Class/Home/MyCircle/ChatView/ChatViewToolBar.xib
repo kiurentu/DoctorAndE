@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="phI-nz-UrT" customClass="ChatViewToolBar">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAg-pv-dRG">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" tag="1006" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJU-lx-8Yf">
+                    <rect key="frame" x="0.0" y="0.0" width="46" height="47"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="WRc-H8-Eps"/>
+                        <constraint firstAttribute="height" constant="47" id="bGd-p3-bE1"/>
+                    </constraints>
+                    <state key="normal" image="tabbar_ic语音-normal.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnWayClick:" destination="phI-nz-UrT" eventType="touchUpInside" id="5Qx-NS-bNw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1005" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqs-1o-o5h">
+                    <rect key="frame" x="274" y="0.0" width="46" height="47"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="9jk-XI-JNf"/>
+                        <constraint firstAttribute="height" constant="47" id="apF-22-RHq"/>
+                    </constraints>
+                    <state key="normal" image="tabbar_ic增加normal.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnAddClick:" destination="phI-nz-UrT" eventType="touchUpInside" id="jX4-dc-btm"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1000" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYS-7o-qh2">
+                    <rect key="frame" x="54" y="9" width="185" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" tag="1004" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyA-8b-jmK">
+                    <rect key="frame" x="247" y="14" width="19" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="tabbar_ic表情-normal.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnFaceClick:" destination="phI-nz-UrT" eventType="touchUpInside" id="hdz-Vz-Gqf"/>
+                    </connections>
+                </button>
+                <view tag="1002" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lX8-Ti-TPT">
+                    <rect key="frame" x="47" y="41" width="226" height="1"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.078431372550000003" green="0.65098039220000004" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="qVu-N0-e4C"/>
+                    </constraints>
+                </view>
+                <view tag="1003" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-cF-eFl">
+                    <rect key="frame" x="272" y="37" width="1" height="5"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.078431372550000003" green="0.65098039220000004" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="wMK-uq-lNI"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRI-ML-cK1">
+                    <rect key="frame" x="47" y="37" width="1" height="5"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" red="0.078431372550000003" green="0.65098039220000004" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="JnN-G5-GZP"/>
+                    </constraints>
+                </view>
+                <button hidden="YES" opaque="NO" tag="1001" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98I-Sg-b7O">
+                    <rect key="frame" x="258" y="9" width="53" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.078431372550000003" green="0.65098039220000004" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="0.019607843140000001" green="0.49267221719999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="发送">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnSendClick:" destination="phI-nz-UrT" eventType="touchUpInside" id="e7X-ei-clU"/>
+                    </connections>
+                </button>
+                <button hidden="YES" opaque="NO" tag="1007" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G31-Xc-Otq">
+                    <rect key="frame" x="47" y="9" width="226" height="33"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="按住 说话" backgroundImage="btn_normal.png">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="voiceCancleEvent:" destination="phI-nz-UrT" eventType="touchCancel" id="C5r-eS-UJH"/>
+                        <action selector="voiceEndUp:" destination="phI-nz-UrT" eventType="touchUpOutside" id="1Sa-4t-Ada"/>
+                        <action selector="voiceEndUp:" destination="phI-nz-UrT" eventType="touchUpInside" id="Cub-QB-RBk"/>
+                        <action selector="voiceStartClick:" destination="phI-nz-UrT" eventType="touchDown" id="Xii-dI-SBC"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.99215686274509807" green="0.99215686274509807" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="DYS-7o-qh2" firstAttribute="top" secondItem="gAg-pv-dRG" secondAttribute="bottom" constant="8" id="0El-de-cTg"/>
+                <constraint firstItem="lX8-Ti-TPT" firstAttribute="top" secondItem="DYS-7o-qh2" secondAttribute="bottom" id="4VU-2J-LPV"/>
+                <constraint firstAttribute="bottom" secondItem="lX8-Ti-TPT" secondAttribute="bottom" constant="5" id="6q5-a7-Hzc"/>
+                <constraint firstAttribute="bottom" secondItem="dqs-1o-o5h" secondAttribute="bottom" id="Ckh-2S-NMb"/>
+                <constraint firstAttribute="bottom" secondItem="cyA-8b-jmK" secondAttribute="bottom" constant="14" id="Db4-5n-BEd"/>
+                <constraint firstAttribute="bottom" secondItem="q6a-cF-eFl" secondAttribute="bottom" constant="5" id="KLQ-Y0-DAK"/>
+                <constraint firstAttribute="bottom" secondItem="BJU-lx-8Yf" secondAttribute="bottom" id="U8M-Qt-n9d"/>
+                <constraint firstItem="lX8-Ti-TPT" firstAttribute="top" secondItem="98I-Sg-b7O" secondAttribute="bottom" constant="2" id="rEH-m0-tBa"/>
+                <constraint firstAttribute="bottom" secondItem="eRI-ML-cK1" secondAttribute="bottom" constant="5" id="tP3-zm-YMc"/>
+            </constraints>
+            <connections>
+                <outlet property="btnFace" destination="cyA-8b-jmK" id="8tR-r7-UyI"/>
+                <outlet property="btnSend" destination="98I-Sg-b7O" id="9w8-ND-7W7"/>
+                <outlet property="btnVoice" destination="G31-Xc-Otq" id="NiU-6C-inE"/>
+                <outlet property="btnWay" destination="BJU-lx-8Yf" id="Rd1-q8-mpj"/>
+                <outlet property="horView" destination="lX8-Ti-TPT" id="NFD-hp-hJ7"/>
+                <outlet property="sView" destination="q6a-cF-eFl" id="uwP-vr-yea"/>
+                <outlet property="tv" destination="DYS-7o-qh2" id="Ygm-Zz-Z5t"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_normal.png" width="262" height="28"/>
+        <image name="tabbar_ic增加normal.png" width="28" height="27"/>
+        <image name="tabbar_ic表情-normal.png" width="17" height="17"/>
+        <image name="tabbar_ic语音-normal.png" width="28" height="27"/>
+    </resources>
+</document>

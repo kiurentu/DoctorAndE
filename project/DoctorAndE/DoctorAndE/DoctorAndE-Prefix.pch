@@ -1,0 +1,122 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+  #warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+  #import <UIKit/UIKit.h>
+  #import <Foundation/Foundation.h>
+  #import "App.h"
+  #import "NSString+file.h"
+  #import "UIButton+Bg.h"
+  #import "UIImage+image.h"
+  #import "Tools.h"
+  #import "UINavigationBar+AddBtn.h"
+#endif
+
+/*--------------------------------UserDefault--------------------------------*/
+#define KEY_IS_BEFOR_LOGIN  (@"__isBeforLogin__")           // 是否登录过，或者注册过
+#define KEY_USR_INFO        (@"__userInfo__")                // 用户的信息
+#define KEY_USR_ON_OFF      (@"__gesturePasswrodOnOff__")   // 手势密码开关
+/*--------------------------------UserDefault--------------------------------*/
+
+// 设置Debug模式编译时，打印Log
+#ifdef DEBUG
+  #define NSLog(...)    NSLog(__VA_ARGS__)
+  #define debugMethod() NSLog(@"%s", __func__)
+#else
+  #define NSLog(...)
+  #define debugMethod()
+#endif
+
+/*------------------------------------Config------------------------------------*/
+#define ISDEBUG                         (YES)                    // 是否开启测试模式
+#define DEFAULT_ROOT_URL                (@"121.8.131.228")      // 默认根URL
+#define DEFAULT_PORT                    (@"8090")               // 默认端口
+#define DEFAULT_XMPP_HOST               (@"121.8.131.228")      // XMPP默认主机
+#define DEFAULT_XMPP_SERVER             (@"@cluster.openfire")  // XMPP默认JID的服务地址
+#define DEFAULT_XMPP_HOST_PORT          (5222)                  // XMPP默认主机端口
+#define DEFAULT_XMPP_AUTO_PING_INTERVAL (30)                    // XMPP自动发送心跳包间隔
+
+/*------------------------------------Config------------------------------------*/
+
+#define WEAK_SELF(THIS) __weak typeof(self) THIS = self
+#define APP             ([App sharedApp])                                                                           // 获取App单例
+#define TOKEN           (APP.header.token)                                                                          // 获取Token
+
+#define SYSTERM_VERSION ([[[[UIDevice currentDevice]systemVersion] substringToIndex:1] intValue])                   // 获取系统版本
+
+#define SCREEN_WIDTH    ([UIScreen mainScreen].bounds.size.width)                                                   // 获取屏幕宽度
+#define SCREEN_HEIGHT   ([UIScreen mainScreen].bounds.size.height)                                                  // 获取屏幕高度
+
+#define VIEW_GET_HEIGHT(VIEW) (VIEW.frame.size.height) // 获取View的高度
+#define VIEW_GET_WIDTH(VIEW) (VIEW.frame.size.width) // 获取view的宽度
+#define VIEW_GET_X(VIEW) (VIEW.frame.origin.x) // 获取view的x坐标
+#define VIEW_GET_Y(VIEW) (VIEW.frame.origin.y) // 获取view的y坐标
+
+#define IMAGE(imageName)    ([UIImage imageNamed:imageName])                                                        // 创建图片
+
+#define RGBA(R, G, B, A)    ([UIColor colorWithRed:R / 255.0f green:G / 255.0f blue:B / 255.0f alpha:A / 255.0f ])   // 使用RGBA(0~255)创建一个UIColor
+
+// 是否IOS7以上
+#define IOS7        (SYSTERM_VERSION >= 7 ? YES : NO)
+
+// 全局统一背景
+#define kGlobalBg   RGBCOLOR(235, 235, 235)
+
+// 判断是否为iPhone5
+#define iPhone5     ([UIScreen mainScreen].bounds.size.height == 568)
+
+#define RGBCOLOR(r, g, b) ([UIColor colorWithRed : (r) / 255.0f green : (g) / 255.0f blue : (b) / 255.0f alpha : 1])
+
+/*--------------------------------正则表达式--------------------------------*/
+#define REGEX_PHONE @"^0?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$"    // 手机号码
+#define REGEX_PSW   @"^(?!\\d+$)[\\w_\\.@]{6,30}$"                         // 验证密码
+#define REGEX_ID    @"^(\\d{14}|\\d{17})(\\d|[xX])$"                // 身份证号
+#define REGEX_ID_15 @"^(\\d)\\1{14}$"                               // 15个数字必须相同
+#define REGEX_ID_18 @"^(\\d)\\1{17}$"                               // 18个数字必须相同
+#define REGEX_POSTAL_CODE @"[1-9]\\d{5}(?!\\d)"       //中国邮政编码
+/*--------------------------------正则表达式--------------------------------*/
+
+/*--------------------------------URL--------------------------------*/
+#define URL_LOGIN                   ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/uums/servlet/userLoginServlet"])                // 登录
+#define URL_GET_AUTH_CODE           ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/uums/servlet/getRandomCodeServlet"])            // 获取验证码
+#define URL_CHECK_AUTH_CODE         ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/uums/servlet/checkRandomCodeServlet"])          // 验证验证码
+#define URL_REGISTER                ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/uums/servlet/addNewUserServlet"])               // 用户注册
+#define URL_GET_FIND_PSW_AUTH_CODE  ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/uums/servlet/getRandomCodeForPasswordServlet"]) // 获取重置密码的验证码
+#define URL_UPDATE_PSW              ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/uums/servlet/updateUserPasswordServlet"])       //  修改密码
+#define URL_UPDATE_USER_INFO        ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/uums/servlet/updateUserInfoServlet"])           // 用户信息资料完善
+#define URL_SEARCH_USER_INFO        ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/uums/servlet/searchUserInfoServlet"])           // 查询个人资料
+#define URL_GET_USER_AUTH_INFO       ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/getUserAuthInfo"])           // 获取用户或亲友身份验证信息接口
+
+#define URL_CHANGE_USER_PHONE       ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/uums/servlet/changeUserPhoneServlet"])          // 更换手机号码
+#define URL_SAVE_RECEIVER_INFO      ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/hrs/servlet/saveReceiverInfo"])                // 保存收货人地址
+#define URL_GET_RECEIVER_INFO_LIST  ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/hrs/servlet/getReceiverInfoList"])              // 获取某个用户下的收货人地址信息列表
+#define URL_DELETE_RECEIVER_INFO  ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/hrs/servlet/deleteReceiverInfo"])              //  删除收货人地址
+#define URL_SEARCH_DEVICE_MANAGE_INFO       ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/searchDeviceManageList"])          // 查询用户已绑定设备信息
+#define URL_BIND_DEVICE_MANAGE_INFO       ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/pcArBindDeviceManage"])          // 用户绑定设备
+#define URL_RE_BIND_DEVICE_MANAGE_INFO       ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/pcArReBindDeviceManage"])          // 用户解除绑定设备
+#define URL_SAVE_OR_UPDATE_USER_AUTH_INFO       ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/saveOrUpdateUserAuthInfo"])          // 新增或更新用户或用户亲友身份验证信息
+#define URL_SEARCH_RELATIVES_LIST               ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/searchRelativesList"])          // 查询用户亲友列表
+#define URL_ADD_RELATIVES                       ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/addRelatives"])                   // 添加用户亲友
+#define URL_DELETE_RELATIVES                 ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/deleteRelatives"])                   // 删除用户亲友
+#define URL_EDIT_RELATIVES                         ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/editRelatives"])                   //编辑用户亲友
+#define URL_SET_DEFAULT_RELATIVE               ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/setDefaultRelative"])                   //设置用户亲友为默认的成员
+#define URL_UPDATE_KINSFOLK_SMS_STATUS               ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/updateKinsfolkSMSStatus"])               //修改用户体检结果是否短信通知亲友
+#define URL_UNLOAD_IMG       ([NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/fms/imagesUpload"])          // 上传图片
+
+
+
+#define URL_MORE_HEALTHSHOP     [NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/mms/servlet/findCommodityList"]      //更多商品
+#define URL_MAIN_HEALTHSHOP     [NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/mms/servlet/findCommodityList"]      //主页商品
+#define URL_SCROLLVIEW_SHOP     [NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/chims/servlet/searchAdvertises"]     //滚屏数据
+#define URL_COMMODITY_COMMENT   [NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/mms/servlet/getCommodityEvalutionList"]  //查看评论
+#define URL_COMMODITY_DETAIL    [NSString stringWithFormat:@"%@%@", [[App sharedApp] getServerUrl], @"/mms/servlet/getCommodityDetail"]     //商品详情
+/*--------------------------------URL--------------------------------*/
